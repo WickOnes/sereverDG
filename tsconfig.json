@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "strict": true
+  },
+  "include": ["*.ts", "src/index.ts"]
+}
