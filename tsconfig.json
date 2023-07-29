@@ -3,7 +3,12 @@
     "target": "es2021",
     "module": "CommonJS",
     "outDir": "./dist",
-    "strict": true
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@services/*": ["services/*"],
+    }
   },
   "include": ["*.ts", "src/index.ts"]
 }

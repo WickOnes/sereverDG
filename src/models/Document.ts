@@ -1,10 +1,14 @@
+import { htmlToPdf } from "../utils/utils";
+
 export class Document {
-  constructor(private name: string, public file: string) {}
+  constructor(private name: string, public file: any, private path?: string) {}
 
-  static generateDocument(data: any, template: string) {
-    // Functional for generate document
+  static async generateDocument(data: any, template: string) {
+    Object.keys(data).forEach((key) => {
+      template = template.replaceAll(`{${key}}`, data[key]);
+    });
 
-    const file = JSON.stringify(data);
-    return new Document(data.name, file);
+    const pdf = await htmlToPdf(template);
+    return new Document(data.name, pdf);
   }
 }
