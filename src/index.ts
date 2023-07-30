@@ -7,12 +7,11 @@ const server = express();
 
 server.use(express.json());
 server.use(cors);
+
 server.use("/api/document", DocumentRouter);
 
 async function start() {
-  server.listen(process.env.PORT, () => {
-    console.log("Start server");
-  });
+  server.listen(process.env.PORT, () => {});
 }
 
 start();
