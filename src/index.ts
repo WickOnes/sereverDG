@@ -11,7 +11,9 @@ server.use(cors);
 server.use("/api/document", DocumentRouter);
 
 async function start() {
-  server.listen(process.env.PORT, () => {});
+  server.listen(process.env.PORT, () => {
+    console.log("start");
+  });
 }
 
 start();
