@@ -43,10 +43,54 @@ const templates = [
     name: "Second Document",
     template: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><title>Document</title></head><body>Test: {name}</body></html>`,
     dataList: [
-      { name: "address", placeholder: "address" },
-      { name: "FullName", placeholder: "Full Name" },
-      { name: "phone", placeholder: "+380" },
-      { name: "address", placeholder: "address" },
+      {
+        placeholder: "Торговий агент",
+        name: "tradeName",
+      },
+      {
+        placeholder: "Тип ТТ",
+        name: "typeTradePoint",
+      },
+      {
+        placeholder: "Продукція",
+        name: "product",
+        type: "checkbox",
+        value: ["шоко", "корм", "ригли"],
+      },
+      {
+        placeholder: "День візиту",
+        name: "visitDey",
+      },
+      {
+        placeholder: "Назва клієнта",
+        name: "clientName",
+      },
+      {
+        placeholder: "Адреса доставки",
+        name: "address",
+      },
+      {
+        placeholder: "Форма оплати",
+        name: "formPay",
+        type: "radio",
+        value: ["нал2ф", "чек/факт", "чек/кр", "б/н"],
+      },
+      {
+        placeholder: "Відтермінування",
+        name: "postponement",
+      },
+      {
+        placeholder: "Прайс",
+        name: "price",
+      },
+      {
+        placeholder: "Контакти",
+        name: "contact",
+      },
+      {
+        placeholder: "Телефон",
+        name: "phone",
+      },
     ],
   },
 ];
