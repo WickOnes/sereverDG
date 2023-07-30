@@ -6,9 +6,7 @@ export async function htmlToPdf(html: any) {
   });
 
   const page = await browser.newPage();
-
   await page.setContent(html, { waitUntil: "domcontentloaded" });
-
   await page.emulateMediaType("screen");
 
   const PDF = await page.pdf({
