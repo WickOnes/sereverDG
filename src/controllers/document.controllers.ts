@@ -3,13 +3,17 @@ import * as fs from "node:fs";
 export default class DocumentController {
   constructor() {}
   async createDocument(req: any, res: any) {
-    const data = req.body.data;
-    const doc = await Document.generateDocument(data, templates[0].template);
+    console.log("body:", req.body);
+    try {
+      const data = req.body.data;
+      const doc = await Document.generateDocument(data, templates[0].template);
 
-    const path = "result.pdf";
-    fs.appendFileSync(path, doc.file);
-
-    return res.download(path);
+      const path = "result.png";
+      fs.appendFileSync(path, doc.file);
+      return res.download(path);
+    } catch (error) {
+      res.send({ message: error });
+    }
   }
 
   async getDocumentsList(req: any, res: any) {
@@ -17,6 +21,8 @@ export default class DocumentController {
       const { template, ...res } = v;
       return res;
     });
+
+    console.log(list);
 
     res.send(list);
   }
